@@ -12,7 +12,7 @@ public class Driver : MonoBehaviour
     [SerializeField] float slow = 15f;
     [SerializeField] float nitro = 30f;
     [SerializeField] TextMeshProUGUI countText;
-    bool hasPackage;
+    
     int totalPackages;
     int cont = 0;
 
@@ -43,21 +43,18 @@ public class Driver : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.tag == "Boost"){
+        if(other.CompareTag ("Boost")){
             moveSpeed = nitro;
         }
 
          if (other.CompareTag("Package"))
         {
             cont++;
-            hasPackage = true;
             Debug.Log("Pacote coletado! Total coletados: " + cont);
             UpdateCountText(); 
         }
 
-         if(other.tag == "Delivery"){
-            hasPackage = false;
-        }
+        
     }
 
     void OnCollisionEnter2D(Collision2D other)
