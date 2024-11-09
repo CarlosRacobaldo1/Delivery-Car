@@ -47,7 +47,7 @@ public class Driver : MonoBehaviour
             moveSpeed = nitro;
         }
 
-         if (other.CompareTag("Package") && !hasPackage)
+         if (other.CompareTag("Package"))
         {
             cont++;
             hasPackage = true;

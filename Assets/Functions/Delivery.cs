@@ -34,13 +34,12 @@ public class Delivery : MonoBehaviour
             Debug.Log("Busque comer cimento");
         }
 
-        if (other.tag == "Package" && !hasPackage){
+        if (other.tag == "Package"){
             Debug.Log("Package collected");
             hasPackage = true;
             spriteRenderer.color = hasPackageColor;
             Destroy(other.gameObject, delay);
-            cont ++;
-
+            cont ++;      
         }
 
         if (other.tag == "Delivery" && hasPackage == true){
